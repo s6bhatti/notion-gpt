@@ -1,5 +1,5 @@
-from .blocks import (create_page, create_database, create_divider, create_heading,
-                     create_paragraph, create_list, create_todo_list, create_toggle)
+from .blocks import (create_page, create_database, create_divider, create_heading, create_paragraph,
+                     create_list, create_todo_list, create_toggle, create_callout, create_quote)
 
 
 def process_blueprint(parent_id, block_json):
@@ -34,3 +34,11 @@ def process_blueprint(parent_id, block_json):
         toggle_id = create_toggle(parent_id, title)["results"][0]["id"]
         for child in block_json.get("children", []):
             process_blueprint(toggle_id, child)
+    elif block_type == "callout":
+        text = block_json.get("text", "")
+        icon = block_json.get("icon", "💡")
+        color = block_json.get("color", "default")
+        create_callout(parent_id, text, icon, color)
+    elif block_type == "quote":
+        text = block_json.get("text", "")
+        create_quote(parent_id, text)

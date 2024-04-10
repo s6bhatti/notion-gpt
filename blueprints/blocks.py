@@ -187,3 +187,54 @@ def create_toggle(parent_id, title):
         ]
     })
     return toggle_block
+
+
+def create_callout(parent_id, text, icon, color="default"):
+    callout_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": [
+            {
+                "object": "block",
+                "type": "callout",
+                "callout": {
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": {
+                                "content": text
+                            }
+                        }
+                    ],
+                    "icon": {
+                        "type": "emoji",
+                        "emoji": icon
+                    },
+                    "color": color
+                }
+            }
+        ]
+    })
+    return callout_block
+
+
+def create_quote(parent_id, text):
+    quote_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": [
+            {
+                "object": "block",
+                "type": "quote",
+                "quote": {
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": {
+                                "content": text
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    })
+    return quote_block
