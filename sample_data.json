@@ -1,18 +1,25 @@
 {
   "type": "page",
-  "title": "Weekly Grocery Planning",
+  "title": "Ultimate Productivity Hub",
   "children": [
     {
       "type": "heading_1",
-      "text": "Grocery List Overview"
+      "text": "Welcome to Your Productivity Hub"
     },
     {
       "type": "paragraph",
-      "text": "Organize your weekly grocery shopping with a detailed list and budget tracking."
+      "text": "Everything you need to stay organized, from grocery lists to project management, all in one place."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading_2",
+      "text": "Grocery List"
     },
     {
       "type": "database",
-      "title": "Grocery List",
+      "title": "Weekly Grocery Planning",
       "schema": {
         "Name": {
           "type": "title"
@@ -81,21 +88,52 @@
     },
     {
       "type": "heading_2",
-      "text": "Shopping Tips"
+      "text": "Tasks & Projects"
     },
     {
-      "type": "paragraph",
-      "text": "Consider seasonal produce for fresher options and better prices. Don't forget to check pantry staples before heading out."
+      "type": "toggle",
+      "title": "Current Projects",
+      "children": [
+        {
+          "type": "to_do_list",
+          "items": [
+            {"text": "Project 1 - Due Next Week", "checked": false},
+            {"text": "Project 2 - In Progress", "checked": true}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "title": "General Tasks",
+      "children": [
+        {
+          "type": "bulleted_list",
+          "items": ["Task 1", "Task 2", "Task 3"]
+        },
+        {
+          "type": "numbered_list",
+          "items": ["Step 1", "Step 2", "Step 3"]
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading_2",
+      "text": "Meeting Notes"
     },
     {
       "type": "page",
-      "title": "Favorite Recipes",
+      "title": "Notes Archive",
       "children": [
         {
           "type": "paragraph",
-          "text": "Compile your go-to recipes here for quick access while planning meals."
+          "text": "A collection of notes from past meetings."
         }
       ]
     }
   ]
 }
+

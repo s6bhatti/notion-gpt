@@ -116,3 +116,74 @@ def create_paragraph(parent_id, text):
         ]
     })
     return paragraph_block
+
+
+def create_list(parent_id, items, bulleted=True):
+    list_type = "bulleted_list_item" if bulleted else "numbered_list_item"
+    children = [{
+        "object": "block",
+        "type": list_type,
+        list_type: {
+            "rich_text": [
+                {
+                    "type": "text",
+                    "text": {
+                        "content": item
+                    }
+                }
+            ]
+        }
+    } for item in items]
+
+    list_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": children
+    })
+    return list_block
+
+
+def create_todo_list(parent_id, items):
+    children = [{
+        "object": "block",
+        "type": "to_do",
+        "to_do": {
+            "rich_text": [
+                {
+                    "type": "text",
+                    "text": {
+                        "content": item["text"]
+                    }
+                }
+            ],
+            "checked": item.get("checked", False),
+        },
+    } for item in items]
+
+    todo_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": children
+    })
+    return todo_block
+
+
+def create_toggle(parent_id, title):
+    toggle_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": [
+            {
+                "object": "block",
+                "type": "toggle",
+                "toggle": {
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": {
+                                "content": title
+                            }
+                        }
+                    ],
+                }
+            }
+        ]
+    })
+    return toggle_block
