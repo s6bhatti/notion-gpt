@@ -1,0 +1,101 @@
+{
+  "type": "page",
+  "title": "Weekly Grocery Planning",
+  "children": [
+    {
+      "type": "heading_1",
+      "text": "Grocery List Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Organize your weekly grocery shopping with a detailed list and budget tracking."
+    },
+    {
+      "type": "database",
+      "title": "Grocery List",
+      "schema": {
+        "Name": {
+          "type": "title"
+        },
+        "Description": {
+          "type": "rich_text"
+        },
+        "In stock": {
+          "type": "checkbox"
+        },
+        "Food group": {
+          "type": "select",
+          "options": [
+            {
+              "name": "🥦Vegetable",
+              "color": "green"
+            },
+            {
+              "name": "🍎Fruit",
+              "color": "red"
+            },
+            {
+              "name": "💪Protein",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Price": {
+          "type": "number",
+          "format": "dollar"
+        },
+        "Last ordered": {
+          "type": "date"
+        },
+        "Store availability": {
+          "type": "multi_select",
+          "options": [
+            {
+              "name": "Duc Loi Market",
+              "color": "blue"
+            },
+            {
+              "name": "Rainbow Grocery",
+              "color": "gray"
+            },
+            {
+              "name": "Nijiya Market",
+              "color": "purple"
+            },
+            {
+              "name": "Gus's Community Market",
+              "color": "yellow"
+            }
+          ]
+        },
+        "+1": {
+          "type": "people"
+        },
+        "Photo": {
+          "type": "files"
+        }
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading_2",
+      "text": "Shopping Tips"
+    },
+    {
+      "type": "paragraph",
+      "text": "Consider seasonal produce for fresher options and better prices. Don't forget to check pantry staples before heading out."
+    },
+    {
+      "type": "page",
+      "title": "Favorite Recipes",
+      "children": [
+        {
+          "type": "paragraph",
+          "text": "Compile your go-to recipes here for quick access while planning meals."
+        }
+      ]
+    }
+  ]
+}
