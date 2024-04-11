@@ -1,11 +1,31 @@
 import os
 
+import requests
 from notion_client import Client
 
-notion = Client(auth=os.environ["NOTION_KEY"])
+NOTION_KEY = os.environ["NOTION_KEY"]
+UNSPLASH_ACCESS_KEY = os.environ["UNSPLASH_ACCESS_KEY"]
+
+notion = Client(auth=NOTION_KEY)
 
 
-def create_page(parent_id, title):
+def get_unsplash_image_url(query):
+    params = {
+        "query": query,
+        "client_id": UNSPLASH_ACCESS_KEY,
+        "orientation": "landscape"
+    }
+    response = requests.get("https://api.unsplash.com/search/photos", params=params)
+
+    if response.status_code == 200:
+        results = response.json()["results"]
+        if results:
+            return results[0]["urls"]["regular"]
+    return None
+
+
+def create_page(parent_id, title, cover_image=True):
+    image_url = get_unsplash_image_url(title) if cover_image else None
     new_page = notion.pages.create(**{
         "parent": {
             "page_id": parent_id
@@ -22,11 +42,18 @@ def create_page(parent_id, title):
                 ]
             },
         },
+        "cover": {
+            "type": "external",
+            "external": {
+                "url": image_url
+            }
+        } if image_url else {}
     })
     return new_page
 
 
-def create_database(parent_id, title, schema):
+def create_database(parent_id, title, schema, cover_image=True):
+    image_url = get_unsplash_image_url(title) if cover_image else None
     approved_types = (
         "title", "rich_text", "number", "checkbox", "date", "people",
         "files", "url", "email", "phone_number", "select", "multi_select"
@@ -53,7 +80,13 @@ def create_database(parent_id, title, schema):
                 }
             }
         ],
-        "properties": properties
+        "properties": properties,
+        "cover": {
+            "type": "external",
+            "external": {
+                "url": image_url
+            }
+        } if image_url else {}
     })
     return new_database
 

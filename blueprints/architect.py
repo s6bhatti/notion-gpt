@@ -7,13 +7,13 @@ def process_blueprint(parent_id, block_json):
 
     if block_type == "page":
         title = block_json.get("title", "Untitled Page")
-        page_id = create_page(parent_id, title)["id"]
+        page_id = create_page(parent_id, title, cover_image=True)["id"]
         for child in block_json.get("children", []):
             process_blueprint(page_id, child)
     elif block_type == "database":
         title = block_json.get("title", "Untitled Database")
         schema = block_json.get("schema", {})
-        create_database(parent_id, title, schema)
+        create_database(parent_id, title, schema, cover_image=True)
     elif block_type == "divider":
         create_divider(parent_id)
     elif block_type.startswith("heading_"):

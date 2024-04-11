@@ -1,0 +1,212 @@
+{
+  "type": "page",
+  "title": "Health and Fitness Dashboard",
+  "children": [
+    {
+      "type": "callout",
+      "text": "With this Health and Fitness Dashboard template, you can plan out your groceries, meals and workouts in a centralized place.",
+      "icon": "💡",
+      "color": "yellow_background"
+    },
+    {
+      "type": "heading_1",
+      "text": "Weekly Grocery Planning"
+    },
+    {
+      "type": "database",
+      "title": "Weekly Grocery Planning",
+      "schema": {
+        "Name": {
+          "type": "title"
+        },
+        "Description": {
+          "type": "rich_text"
+        },
+        "In stock": {
+          "type": "checkbox"
+        },
+        "Food group": {
+          "type": "select",
+          "options": [
+            {
+              "name": "🥦Vegetable",
+              "color": "green"
+            },
+            {
+              "name": "🍎Fruit",
+              "color": "red"
+            },
+            {
+              "name": "💪Protein",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Price": {
+          "type": "number",
+          "format": "dollar"
+        },
+        "Last ordered": {
+          "type": "date"
+        },
+        "Store availability": {
+          "type": "multi_select",
+          "options": [
+            {
+              "name": "Duc Loi Market",
+              "color": "blue"
+            },
+            {
+              "name": "Rainbow Grocery",
+              "color": "gray"
+            },
+            {
+              "name": "Nijiya Market",
+              "color": "purple"
+            },
+            {
+              "name": "Gus's Community Market",
+              "color": "yellow"
+            }
+          ]
+        },
+        "+1": {
+          "type": "people"
+        },
+        "Photo": {
+          "type": "files"
+        }
+      }
+    },
+    {
+      "type": "heading_1",
+      "text": "Meal Planner"
+    },
+    {
+      "type": "database",
+      "title": "Meal Planner",
+      "schema": {
+        "Recipe Name": {
+          "type": "title"
+        },
+        "Ingredients": {
+          "type": "rich_text"
+        },
+        "Preparation Time": {
+          "type": "number",
+          "format": "minutes"
+        },
+        "Calories": {
+          "type": "number",
+          "format": "number"
+        },
+        "Dietary Restrictions": {
+          "type": "multi_select",
+          "options": [
+            {
+              "name": "Vegetarian",
+              "color": "green"
+            },
+            {
+              "name": "Vegan",
+              "color": "red"
+            },
+            {
+              "name": "Gluten-Free",
+              "color": "orange"
+            },
+            {
+              "name": "Keto",
+              "color": "blue"
+            }
+          ]
+        },
+        "Instructions": {
+          "type": "rich_text"
+        },
+        "Nutritional Info": {
+          "type": "rich_text"
+        },
+        "Rating": {
+          "type": "select",
+          "options": [
+            {
+              "name": "⭐",
+              "color": "yellow"
+            },
+            {
+              "name": "⭐⭐",
+              "color": "yellow"
+            },
+            {
+              "name": "⭐⭐⭐",
+              "color": "yellow"
+            },
+            {
+              "name": "⭐⭐⭐⭐",
+              "color": "yellow"
+            },
+            {
+              "name": "⭐⭐⭐⭐⭐",
+              "color": "yellow"
+            }
+          ]
+        },
+        "Photo": {
+          "type": "files"
+        }
+      }
+    },
+    {
+      "type": "heading_1",
+      "text": "Workout Tracker"
+    },
+    {
+      "type": "page",
+      "title": "Workouts",
+      "children": [
+        {
+          "type": "toggle",
+          "title": "Workout History",
+          "children": [
+            {
+              "type": "toggle",
+              "title": "January 1st - Leg Day",
+              "children": [
+                {
+                  "type": "to_do_list",
+                  "items": [
+                    {
+                      "text": "Warm-up: 10 minutes on the stationary bike",
+                      "checked": false
+                    },
+                    {
+                      "text": "Squats: 4 sets of 10 reps",
+                      "checked": false
+                    },
+                    {
+                      "text": "Leg Press: 3 sets of 12 reps",
+                      "checked": false
+                    },
+                    {
+                      "text": "Lunges with Dumbbells: 3 sets of 15 reps per leg",
+                      "checked": false
+                    },
+                    {
+                      "text": "Leg Curls: 3 sets of 12 reps",
+                      "checked": false
+                    },
+                    {
+                      "text": "Calf Raises: 4 sets of 15 reps",
+                      "checked": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

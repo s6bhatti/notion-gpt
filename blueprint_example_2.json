@@ -1,0 +1,163 @@
+{
+  "type": "page",
+  "title": "School Hub",
+  "children": [
+    {
+      "type": "heading_1",
+      "text": "Planning"
+    },
+    {
+      "type": "heading_2",
+      "text": "Classes"
+    },
+    {
+      "type": "page",
+      "title": "Class Schedule",
+      "children": [
+        {
+          "type": "heading_1",
+          "text": "Schedule"
+        },
+        {
+          "type": "bulleted_list",
+          "items": [
+            "English 101 - Monday & Wednesday, 9:00 AM - 10:30 AM - Building A, Room 204",
+            "World History II - Tuesday & Thursday, 10:45 AM - 12:15 PM - Building C, Room 101",
+            "Calculus I - Monday & Wednesday, 1:00 PM - 2:30 PM - Building B, Room 310",
+            "General Biology - Tuesday & Thursday, 2:45 PM - 4:15 PM - Science Center, Room 450"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading_2",
+      "text": "Assignments"
+    },
+    {
+      "type": "database",
+      "title": "Assignment Tracker",
+      "schema": {
+        "Title": {
+          "type": "title"
+        },
+        "Due Date": {
+          "type": "date"
+        },
+        "Course": {
+          "type": "rich_text"
+        },
+        "Status": {
+          "type": "select",
+          "options": [
+            {
+              "name": "Not Started",
+              "color": "red"
+            },
+            {
+              "name": "In Progress",
+              "color": "yellow"
+            },
+            {
+              "name": "Completed",
+              "color": "green"
+            }
+          ]
+        },
+        "Details": {
+          "type": "rich_text"
+        },
+        "Priority": {
+          "type": "select",
+          "options": [
+            {
+              "name": "High",
+              "color": "red"
+            },
+            {
+              "name": "Medium",
+              "color": "yellow"
+            },
+            {
+              "name": "Low",
+              "color": "green"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "heading_1",
+      "text": "Coursework"
+    },
+    {
+      "type": "heading_2",
+      "text": "Notes"
+    },
+    {
+      "type": "page",
+      "title": "English Notes",
+      "children": [
+        {
+          "type": "callout",
+          "text": "Your English notes will go here...",
+          "icon": "✍️"
+        },
+        {
+          "type": "toggle",
+          "title": "Lecture Notes",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "Add your notes here..."
+            }
+          ]
+        },
+        {
+          "type": "toggle",
+          "title": "Readings",
+          "children": [
+            {
+              "type": "bulleted_list",
+              "items": [
+                "Hamlet, Act 1-3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "title": "History Notes",
+      "children": [
+        {
+          "type": "callout",
+          "text": "Your History notes will go here...",
+          "icon": "🌎"
+        },
+        {
+          "type": "toggle",
+          "title": "Lecture Notes",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "Add your notes here..."
+            }
+          ]
+        },
+        {
+          "type": "toggle",
+          "title": "Readings",
+          "children": [
+            {
+              "type": "bulleted_list",
+              "items": [
+                "The Rise and Fall of the Great Powers"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
