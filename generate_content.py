@@ -5,7 +5,7 @@ from blueprints.architect import process_blueprint, generate_blueprint
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Creates Notion content given a brief description")
+    parser = argparse.ArgumentParser(description="Generates Notion content given a brief description")
     parser.add_argument("description", help="Text description of the desired content in Notion.")
     args = parser.parse_args()
 
