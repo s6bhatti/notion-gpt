@@ -94,65 +94,72 @@
       "text": "Notes"
     },
     {
-      "type": "page",
-      "title": "English Notes",
-      "children": [
+      "type": "column_list",
+      "columns": [
         {
-          "type": "callout",
-          "text": "Your English notes will go here...",
-          "icon": "✍️"
-        },
-        {
-          "type": "toggle",
-          "title": "Lecture Notes",
+          "type": "column",
           "children": [
             {
-              "type": "paragraph",
-              "text": "Add your notes here..."
-            }
-          ]
-        },
-        {
-          "type": "toggle",
-          "title": "Readings",
-          "children": [
-            {
-              "type": "bulleted_list",
-              "items": [
-                "Hamlet, Act 1-3"
+              "type": "callout",
+              "text": "English Notes",
+              "icon": "✍️",
+              "children": [
+                {
+                  "type": "toggle",
+                  "title": "Lecture Notes",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "text": "Add your notes here..."
+                    }
+                  ]
+                },
+                {
+                  "type": "toggle",
+                  "title": "Readings",
+                  "children": [
+                    {
+                      "type": "bulleted_list",
+                      "items": [
+                        "Hamlet, Act 1-3"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "page",
-      "title": "History Notes",
-      "children": [
-        {
-          "type": "callout",
-          "text": "Your History notes will go here...",
-          "icon": "🌎"
         },
         {
-          "type": "toggle",
-          "title": "Lecture Notes",
+          "type": "column",
           "children": [
             {
-              "type": "paragraph",
-              "text": "Add your notes here..."
-            }
-          ]
-        },
-        {
-          "type": "toggle",
-          "title": "Readings",
-          "children": [
-            {
-              "type": "bulleted_list",
-              "items": [
-                "The Rise and Fall of the Great Powers"
+              "type": "callout",
+              "text": "History Notes",
+              "icon": "🌎",
+              "children": [
+                {
+                  "type": "toggle",
+                  "title": "Lecture Notes",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "text": "Add your notes here..."
+                    }
+                  ]
+                },
+                {
+                  "type": "toggle",
+                  "title": "Readings",
+                  "children": [
+                    {
+                      "type": "bulleted_list",
+                      "items": [
+                        "The Rise and Fall of the Great Powers"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]

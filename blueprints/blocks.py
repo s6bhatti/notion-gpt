@@ -222,6 +222,46 @@ def create_toggle(parent_id, title):
     return toggle_block
 
 
+def create_column_list(parent_id, num_columns=2):
+    column_list_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": [
+            {
+                "object": "block",
+                "type": "column_list",
+                "column_list": {
+                    "children": [
+                        {
+                            "object": "block",
+                            "type": "column",
+                            "column": {
+                                "children": [
+                                    {
+                                        "object": "block",
+                                        "type": "paragraph",
+                                        "paragraph": {
+                                            "rich_text": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "content": "placeholder",
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        } for _ in range(num_columns)
+                    ]
+                }
+            }
+        ]
+    })
+
+    return column_list_block
+
+
 def create_callout(parent_id, text, icon, color="default"):
     callout_block = notion.blocks.children.append(**{
         "block_id": parent_id,
