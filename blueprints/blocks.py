@@ -54,10 +54,9 @@ def create_page(parent_id, title, cover_image=True):
 
 def create_database(parent_id, title, schema, cover_image=True):
     image_url = get_unsplash_image_url(title) if cover_image else None
-    approved_types = (
-        "title", "rich_text", "number", "checkbox", "date", "people",
-        "files", "url", "email", "phone_number", "select", "multi_select"
-    )
+    approved_types = ("checkbox", "created_by", "created_time", "date", "email", "files", "last_edited_by",
+                      "last_edited_time", "multi_select", "number", "people", "phone_number", "rich_text", "select",
+                      "title", "url")
 
     properties = {}
     for name, info in schema.items():
@@ -67,6 +66,8 @@ def create_database(parent_id, title, schema, cover_image=True):
 
         if prop_type in ["select", "multi_select"]:
             properties[name] = {prop_type: {"options": info["options"]}}
+        if prop_type == "number":
+            properties[name] = {prop_type: {"format": info["format"]}}
         else:
             properties[name] = {prop_type: {}}
 
