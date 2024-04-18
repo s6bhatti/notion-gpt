@@ -66,7 +66,7 @@ def create_database(parent_id, title, schema, cover_image=True):
 
         if prop_type in ["select", "multi_select"]:
             properties[name] = {prop_type: {"options": info["options"]}}
-        if prop_type == "number":
+        elif prop_type == "number":
             properties[name] = {prop_type: {"format": info["format"]}}
         else:
             properties[name] = {prop_type: {}}
