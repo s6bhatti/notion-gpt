@@ -1,11 +1,11 @@
 import argparse
 import json
 
-from blueprints.utils import fetch_and_process_children
+from blueprints.utils import process_page
 
 
 def pretty_print_blueprint(page_id):
-    blueprint_json = fetch_and_process_children(page_id)
+    blueprint_json = process_page(page_id)
     print(json.dumps(blueprint_json, indent=4))
 
 

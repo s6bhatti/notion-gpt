@@ -26,7 +26,8 @@ def fetch_and_process_children(parent_id):
 
     for child in block_children:
         if child["type"] in ["bulleted_list_item", "numbered_list_item", "to_do"]:
-            list_type = "to_do_list" if child["type"] == "to_do" else "bulleted_list" if child["type"] == "bulleted_list_item" else "numbered_list"
+            list_type = "to_do_list" if child["type"] == "to_do" else "bulleted_list" if child[
+                                                                                             "type"] == "bulleted_list_item" else "numbered_list"
 
             if list_buffer is None or list_buffer["type"] != list_type:
                 if list_buffer:
@@ -49,7 +50,9 @@ def fetch_and_process_children(parent_id):
             formatted_block = format_block(child)
 
             if child.get("has_children", False):
-                formatted_block["columns" if child["type"] == "column_list" else "children"] = fetch_and_process_children(child["id"])
+                formatted_block[
+                    "columns" if child["type"] == "column_list" else "children"] = fetch_and_process_children(
+                    child["id"])
 
             children.append(formatted_block)
 
@@ -65,12 +68,17 @@ def format_block(block):
 
     if block_type == "child_page":
         block_json["type"] = "page"
-        block_json["title"] = block["child_page"]["title"]
+        page_details = notion.pages.retrieve(block["id"])
+        block_json["title"] = page_details["properties"]["title"]["title"][0]["text"]["content"]
+        if page_details["icon"] is not None:
+            block_json["icon"] = page_details["icon"]["emoji"]
 
     elif block_type == "child_database":
         block_json["type"] = "database"
         database_details = notion.databases.retrieve(database_id=block["id"])
         block_json["title"] = database_details["title"][0]["plain_text"]
+        if database_details["icon"] is not None:
+            block_json["icon"] = database_details["icon"]["emoji"]
         properties = {}
         for prop_name, prop_details in database_details["properties"].items():
             prop_type = prop_details["type"]
