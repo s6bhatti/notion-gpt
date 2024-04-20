@@ -1,6 +1,8 @@
 import json
 import os
+import random
 
+import emoji
 from notion_client import Client
 from openai import OpenAI
 
@@ -18,14 +20,18 @@ def process_blueprint(parent_id, block_json):
 
     if block_type == "page":
         title = block_json.get("title", "Untitled Page")
-        page_id = create_page(parent_id, title, cover_image=True)["id"]
+        emojis = [em for em in emoji.EMOJI_DATA if not any(char in em for char in ["🏻", "🏼", "🏽", "🏾", "🏿", "\u200d"]) and not em.startswith(("🇦", "🇧", "🇨", "🇩", "🇪", "🇫", "🇬", "🇭", "🇮", "🇯", "🇰", "🇱", "🇲", "🇳", "🇴", "🇵", "🇶", "🇷", "🇸", "🇹", "🇺", "🇻", "🇼", "🇽", "🇾", "🇿"))]
+        icon = block_json.get("icon", random.choice(emojis))
+        page_id = create_page(parent_id, title, icon, cover_image=True)["id"]
         for child in block_json.get("children", []):
             process_blueprint(page_id, child)
 
     elif block_type == "database":
         title = block_json.get("title", "Untitled Database")
+        emojis = [em for em in emoji.EMOJI_DATA if not any(char in em for char in ["🏻", "🏼", "🏽", "🏾", "🏿", "\u200d"]) and not em.startswith(("🇦", "🇧", "🇨", "🇩", "🇪", "🇫", "🇬", "🇭", "🇮", "🇯", "🇰", "🇱", "🇲", "🇳", "🇴", "🇵", "🇶", "🇷", "🇸", "🇹", "🇺", "🇻", "🇼", "🇽", "🇾", "🇿"))]
+        icon = block_json.get("icon", random.choice(emojis))
         schema = block_json.get("schema", {})
-        create_database(parent_id, title, schema, cover_image=True)
+        create_database(parent_id, title, icon, schema, cover_image=True)
 
     elif block_type == "divider":
         create_divider(parent_id)
