@@ -8,13 +8,13 @@ notion = Client(auth=NOTION_KEY)
 
 def process_page(page_id):
     page = notion.pages.retrieve(page_id)
-    page_title = page["properties"]["title"]["title"][0]["text"]["content"]
-    page_children = fetch_and_process_children(page_id)
     page_blueprint = {
         "type": "page",
-        "title": page_title,
-        "children": page_children
+        "title": page["properties"]["title"]["title"][0]["text"]["content"]
     }
+    if page["icon"] is not None:
+        page_blueprint["icon"] = page["icon"]["emoji"]
+    page_blueprint["children"] = fetch_and_process_children(page_id)
     return page_blueprint
 
 
@@ -133,9 +133,9 @@ def format_block(block):
         block_json["title"] = block["toggle"]["rich_text"][0]["text"]["content"]
 
     elif block_type == "callout":
-        block_json["content"] = process_rich_text(block["callout"]["rich_text"])
         block_json["icon"] = block["callout"]["icon"]["emoji"]
         block_json["color"] = block["callout"]["color"]
+        block_json["content"] = process_rich_text(block["callout"]["rich_text"])
 
     elif block_type == "quote":
         block_json["content"] = process_rich_text(block["quote"]["rich_text"])

@@ -6,8 +6,9 @@ import emoji
 from notion_client import Client
 from openai import OpenAI
 
-from .blocks import (create_page, create_database, create_divider, create_heading, create_paragraph, create_list,
-                     create_todo_list, create_toggle, create_column_list, create_callout, create_quote)
+from .blocks import (create_page, create_database, create_divider, create_table_of_contents, create_heading,
+                     create_paragraph, create_list, create_todo_list, create_toggle, create_column_list, create_callout,
+                     create_quote)
 
 NOTION_KEY = os.environ["NOTION_KEY"]
 
@@ -36,6 +37,9 @@ def process_blueprint(parent_id, block_json):
     elif block_type == "divider":
         create_divider(parent_id)
 
+    elif block_type == "table_of_contents":
+        create_table_of_contents(parent_id)
+
     elif block_type.startswith("heading_"):
         text = block_json.get("text", "")
         level = int(block_type.split("_")[1])
@@ -61,36 +65,25 @@ def process_blueprint(parent_id, block_json):
 
     elif block_type == "column_list":
         num_columns = len(block_json.get("columns", []))
-        result = create_column_list(parent_id, num_columns)
-
-        column_list_id = result["results"][0]["id"]
-        column_ids = []
-        placeholder_ids = []
-
-        column_details = notion.blocks.children.list(block_id=column_list_id)
-
-        for column in column_details["results"]:
-            column_ids.append(column["id"])
-            children_details = notion.blocks.children.list(block_id=column["id"])
-            for child in children_details["results"]:
-                if "paragraph" in child and child["paragraph"]["rich_text"][0]["text"]["content"] == "placeholder":
-                    placeholder_ids.append(child["id"])
+        column_ids = create_column_list(parent_id, num_columns)
 
         for i, column in enumerate(block_json.get("columns", [])):
             for child in column.get("children", []):
                 process_blueprint(column_ids[i], child)
-                notion.blocks.delete(placeholder_ids[i])
 
     elif block_type == "callout":
         text_blocks = block_json.get("content", [])
         icon = block_json.get("icon", "💡")
         color = block_json.get("color", "default")
-        create_callout(parent_id, text_blocks, icon, color)
+        callout_id = create_callout(parent_id, text_blocks, icon, color)["results"][0]["id"]
+        for child in block_json.get("children", []):
+            process_blueprint(callout_id, child)
 
     elif block_type == "quote":
         text_blocks = block_json.get("content", [])
-        create_quote(parent_id, text_blocks)
-
+        quote_id = create_quote(parent_id, text_blocks)["results"][0]["id"]
+        for child in block_json.get("children", []):
+            process_blueprint(quote_id, child)
 
 def generate_blueprint(description):
     response = client.chat.completions.create(

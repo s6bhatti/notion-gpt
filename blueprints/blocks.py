@@ -136,6 +136,20 @@ def create_divider(parent_id):
     return divider_block
 
 
+def create_table_of_contents(parent_id):
+    toc_block = notion.blocks.children.append(**{
+        "block_id": parent_id,
+        "children": [
+            {
+                "object": "block",
+                "type": "table_of_contents",
+                "table_of_contents": {}
+            }
+        ]
+    })
+    return toc_block
+
+
 def create_heading(parent_id, text, level):
     heading_block = notion.blocks.children.append(**{
         "block_id": parent_id,
@@ -283,7 +297,17 @@ def create_column_list(parent_id, num_columns=2):
         ]
     })
 
-    return column_list_block
+    column_details = notion.blocks.children.list(block_id=column_list_block["results"][0]["id"])
+    column_ids = []
+
+    for column in column_details["results"]:
+        column_ids.append(column["id"])
+        children_details = notion.blocks.children.list(block_id=column["id"])
+        for child in children_details["results"]:
+            if "paragraph" in child and child["paragraph"]["rich_text"][0]["text"]["content"] == "placeholder":
+                notion.blocks.delete(child["id"])
+
+    return column_ids
 
 
 def create_callout(parent_id, text_blocks, icon, color="default"):
