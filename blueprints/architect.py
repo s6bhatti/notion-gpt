@@ -42,8 +42,8 @@ def process_blueprint(parent_id, block_json):
         create_heading(parent_id, text, level)
 
     elif block_type == "paragraph":
-        text = block_json.get("text", "")
-        create_paragraph(parent_id, text)
+        text_blocks = block_json.get("content", [])
+        create_paragraph(parent_id, text_blocks)
 
     elif block_type in ["bulleted_list", "numbered_list"]:
         items = block_json.get("items", [])
@@ -82,14 +82,14 @@ def process_blueprint(parent_id, block_json):
                 notion.blocks.delete(placeholder_ids[i])
 
     elif block_type == "callout":
-        text = block_json.get("text", "")
+        text_blocks = block_json.get("content", [])
         icon = block_json.get("icon", "💡")
         color = block_json.get("color", "default")
-        create_callout(parent_id, text, icon, color)
+        create_callout(parent_id, text_blocks, icon, color)
 
     elif block_type == "quote":
-        text = block_json.get("text", "")
-        create_quote(parent_id, text)
+        text_blocks = block_json.get("content", [])
+        create_quote(parent_id, text_blocks)
 
 
 def generate_blueprint(description):

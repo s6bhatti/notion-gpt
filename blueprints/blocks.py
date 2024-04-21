@@ -24,6 +24,28 @@ def get_unsplash_image_url(query):
     return None
 
 
+def process_rich_text_content(text_blocks):
+    rich_text_content = []
+    for block in text_blocks:
+        text_content = {
+            "type": "text",
+            "text": {
+                "content": block["text"],
+                "link": None
+            },
+            "annotations": {
+                "bold": "bold" in block.get("style", []),
+                "italic": "italic" in block.get("style", []),
+                "strikethrough": "strikethrough" in block.get("style", []),
+                "underline": "underline" in block.get("style", []),
+                "code": "code" in block.get("style", []),
+                "color": "default"
+            }
+        }
+        rich_text_content.append(text_content)
+    return rich_text_content
+
+
 def create_page(parent_id, title, icon, cover_image=True):
     image_url = get_unsplash_image_url(title) if cover_image else None
     new_page = notion.pages.create(**{
@@ -137,7 +159,7 @@ def create_heading(parent_id, text, level):
     return heading_block
 
 
-def create_paragraph(parent_id, text):
+def create_paragraph(parent_id, text_blocks):
     paragraph_block = notion.blocks.children.append(**{
         "block_id": parent_id,
         "children": [
@@ -145,15 +167,8 @@ def create_paragraph(parent_id, text):
                 "object": "block",
                 "type": "paragraph",
                 "paragraph": {
-                    "rich_text": [
-                        {
-                            "type": "text",
-                            "text": {
-                                "content": text
-                            }
-                        }
-                    ],
-                },
+                    "rich_text": process_rich_text_content(text_blocks)
+                }
             }
         ]
     })
@@ -271,7 +286,7 @@ def create_column_list(parent_id, num_columns=2):
     return column_list_block
 
 
-def create_callout(parent_id, text, icon, color="default"):
+def create_callout(parent_id, text_blocks, icon, color="default"):
     callout_block = notion.blocks.children.append(**{
         "block_id": parent_id,
         "children": [
@@ -279,14 +294,7 @@ def create_callout(parent_id, text, icon, color="default"):
                 "object": "block",
                 "type": "callout",
                 "callout": {
-                    "rich_text": [
-                        {
-                            "type": "text",
-                            "text": {
-                                "content": text
-                            }
-                        }
-                    ],
+                    "rich_text": process_rich_text_content(text_blocks),
                     "icon": {
                         "type": "emoji",
                         "emoji": icon
@@ -299,7 +307,7 @@ def create_callout(parent_id, text, icon, color="default"):
     return callout_block
 
 
-def create_quote(parent_id, text):
+def create_quote(parent_id, text_blocks):
     quote_block = notion.blocks.children.append(**{
         "block_id": parent_id,
         "children": [
@@ -307,14 +315,7 @@ def create_quote(parent_id, text):
                 "object": "block",
                 "type": "quote",
                 "quote": {
-                    "rich_text": [
-                        {
-                            "type": "text",
-                            "text": {
-                                "content": text
-                            }
-                        }
-                    ]
+                    "rich_text": process_rich_text_content(text_blocks)
                 }
             }
         ]
