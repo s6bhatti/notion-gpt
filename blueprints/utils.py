@@ -18,6 +18,27 @@ def process_page(page_id):
     return page_blueprint
 
 
+def process_rich_text(rich_text):
+    content = []
+    for text in rich_text:
+        style = []
+        if text["annotations"]["bold"]:
+            style.append("bold")
+        if text["annotations"]["italic"]:
+            style.append("italic")
+        if text["annotations"]["strikethrough"]:
+            style.append("strikethrough")
+        if text["annotations"]["underline"]:
+            style.append("underline")
+        if text["annotations"]["code"]:
+            style.append("code")
+        content.append({
+            "text": text["plain_text"],
+            "style": style
+        })
+    return content
+
+
 def fetch_and_process_children(parent_id):
     children = []
     block_children = notion.blocks.children.list(block_id=parent_id)["results"]
@@ -93,10 +114,7 @@ def format_block(block):
         block_json["schema"] = properties
 
     if block_type == "paragraph":
-        if block["paragraph"]["rich_text"]:
-            block_json["text"] = block["paragraph"]["rich_text"][0]["text"]["content"]
-        else:
-            block_json["text"] = ""
+        block_json["content"] = process_rich_text(block["paragraph"]["rich_text"])
 
     elif block_type.startswith("heading_"):
         block_json["text"] = block[block_type]["rich_text"][0]["text"]["content"]
@@ -115,11 +133,11 @@ def format_block(block):
         block_json["title"] = block["toggle"]["rich_text"][0]["text"]["content"]
 
     elif block_type == "callout":
-        block_json["text"] = block["callout"]["rich_text"][0]["text"]["content"]
+        block_json["content"] = process_rich_text(block["callout"]["rich_text"])
         block_json["icon"] = block["callout"]["icon"]["emoji"]
         block_json["color"] = block["callout"]["color"]
 
     elif block_type == "quote":
-        block_json["text"] = block["quote"]["rich_text"][0]["text"]["content"]
+        block_json["content"] = process_rich_text(block["quote"]["rich_text"])
 
     return block_json
