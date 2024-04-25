@@ -77,7 +77,7 @@ def create_page(parent_id, title, icon, cover_image=True):
     return new_page
 
 
-def create_database(parent_id, title, icon, schema, cover_image=True):
+def create_database(parent_id, title, icon, schema, is_inline=False, cover_image=True):
     image_url = get_unsplash_image_url(title) if cover_image else None
     approved_types = ("checkbox", "created_by", "created_time", "date", "email", "files", "last_edited_by",
                       "last_edited_time", "multi_select", "number", "people", "phone_number", "rich_text", "select",
@@ -117,7 +117,8 @@ def create_database(parent_id, title, icon, schema, cover_image=True):
             "external": {
                 "url": image_url
             }
-        } if image_url else {}
+        } if image_url else {},
+        "is_inline": is_inline,
     })
     return new_database
 

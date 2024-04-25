@@ -32,7 +32,8 @@ def process_blueprint(parent_id, block_json):
         emojis = [em for em in emoji.EMOJI_DATA if not any(char in em for char in ["🏻", "🏼", "🏽", "🏾", "🏿", "\u200d"]) and not em.startswith(("🇦", "🇧", "🇨", "🇩", "🇪", "🇫", "🇬", "🇭", "🇮", "🇯", "🇰", "🇱", "🇲", "🇳", "🇴", "🇵", "🇶", "🇷", "🇸", "🇹", "🇺", "🇻", "🇼", "🇽", "🇾", "🇿"))]
         icon = block_json.get("icon", random.choice(emojis))
         schema = block_json.get("schema", {})
-        create_database(parent_id, title, icon, schema, cover_image=True)
+        is_inline = block_json.get("is_inline", False)
+        create_database(parent_id, title, icon, schema, is_inline=is_inline, cover_image=True)
 
     elif block_type == "divider":
         create_divider(parent_id)
@@ -84,6 +85,7 @@ def process_blueprint(parent_id, block_json):
         quote_id = create_quote(parent_id, text_blocks)["results"][0]["id"]
         for child in block_json.get("children", []):
             process_blueprint(quote_id, child)
+
 
 def generate_blueprint(description):
     response = client.chat.completions.create(

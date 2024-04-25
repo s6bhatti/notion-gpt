@@ -100,6 +100,8 @@ def format_block(block):
         block_json["title"] = database_details["title"][0]["plain_text"]
         if database_details["icon"] is not None:
             block_json["icon"] = database_details["icon"]["emoji"]
+        if database_details["is_inline"]:
+            block_json["is_inline"] = database_details["is_inline"]
         properties = {}
         for prop_name, prop_details in database_details["properties"].items():
             prop_type = prop_details["type"]
