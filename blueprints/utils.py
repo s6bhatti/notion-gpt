@@ -47,8 +47,7 @@ def fetch_and_process_children(parent_id):
 
     for child in block_children:
         if child["type"] in ["bulleted_list_item", "numbered_list_item", "to_do"]:
-            list_type = "to_do_list" if child["type"] == "to_do" else "bulleted_list" if child[
-                                                                                             "type"] == "bulleted_list_item" else "numbered_list"
+            list_type = "to_do_list" if child["type"] == "to_do" else "bulleted_list" if child["type"] == "bulleted_list_item" else "numbered_list"
 
             if list_buffer is None or list_buffer["type"] != list_type:
                 if list_buffer:

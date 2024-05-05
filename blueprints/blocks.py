@@ -92,11 +92,11 @@ def create_database(parent_id, title, icon, schema, is_inline=False, cover_image
         if prop_type in ["select", "multi_select"]:
             properties[name] = {prop_type: {"options": info["options"]}}
         elif prop_type == "number":
-            properties[name] = {prop_type: {"format": info["format"]}}
+            properties[name] = {prop_type: {"format": info.get("format", "number")}}
         else:
             properties[name] = {prop_type: {}}
 
-    new_database = notion.databases.create(**{
+    database_payload = {
         "parent": {
             "page_id": parent_id
         },
@@ -112,14 +112,18 @@ def create_database(parent_id, title, icon, schema, is_inline=False, cover_image
             }
         ],
         "properties": properties,
-        "cover": {
+        "is_inline": is_inline,
+    }
+
+    if image_url:
+        database_payload["cover"] = {
             "type": "external",
             "external": {
                 "url": image_url
             }
-        } if image_url else {},
-        "is_inline": is_inline,
-    })
+        }
+
+    new_database = notion.databases.create(**database_payload)
     return new_database
 
 
