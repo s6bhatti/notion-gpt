@@ -1,10 +1,10 @@
 ---
-title: {{title}}
-emoji: {{emoji}}
-colorFrom: {{colorFrom}}
-colorTo: {{colorTo}}
-sdk: {{sdk}}
-sdk_version: {{sdkVersion}}
+title: NotionGPT
+emoji: 🚀
+colorFrom: purple
+colorTo: blue
+sdk: gradio
+sdk_version: 4.29.0
 app_file: app.py
 pinned: false
 ---
