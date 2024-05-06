@@ -1,5 +1,6 @@
 import argparse
 import os
+from functools import partial
 
 from blueprints.architect import process_blueprint, generate_blueprint
 
@@ -11,12 +12,10 @@ def main():
 
     notion_page_id = os.environ["NOTION_PAGE_ID"]
 
-    content = generate_blueprint(args.description)
-    # response = content["response"]
+    custom_print = partial(print, end="", flush=True)
+    content = generate_blueprint(args.description, custom_print)
+
     blueprint = content["blueprint"]
-
-    # print(response)
-
     process_blueprint(notion_page_id, blueprint)
 
 

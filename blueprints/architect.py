@@ -88,7 +88,7 @@ def process_blueprint(parent_id, block_json):
             process_blueprint(quote_id, child)
 
 
-def generate_blueprint(description):
+def generate_blueprint(description, update_fn):
     response = client.chat.completions.create(
         model=MODEL_NAME,
         response_format={"type": "json_object"},
@@ -166,11 +166,11 @@ def generate_blueprint(description):
 
             end_index = response_buffer.find('",')
             if end_index != -1:
-                print(response_buffer[:end_index], end="", flush=True)
+                update_fn(response_buffer[:end_index])
                 in_response = False
                 response_buffer = ""
             else:
-                print(response_buffer[start_index:], end="", flush=True)
+                update_fn(response_buffer[start_index:])
                 response_buffer = ""
 
     content = json.loads(accumulated_json)
