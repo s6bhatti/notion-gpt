@@ -12,8 +12,12 @@ def main():
 
     notion_page_id = os.environ["NOTION_PAGE_ID"]
 
-    custom_print = partial(print, end="", flush=True)
-    content = generate_blueprint(args.description, custom_print)
+    content = None
+    for update in generate_blueprint(args.description):
+        if isinstance(update, dict):
+            content = update
+        else:
+            print(update, end="", flush=True)
 
     blueprint = content["blueprint"]
     process_blueprint(notion_page_id, blueprint)
