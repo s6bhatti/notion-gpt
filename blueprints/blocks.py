@@ -48,7 +48,8 @@ def process_rich_text_content(text_blocks):
 
 def create_page(parent_id, title, icon, cover_image=True):
     image_url = get_unsplash_image_url(title) if cover_image else None
-    new_page = notion.pages.create(**{
+
+    page_payload = {
         "parent": {
             "page_id": parent_id
         },
@@ -66,14 +67,17 @@ def create_page(parent_id, title, icon, cover_image=True):
                     }
                 ]
             },
-        },
-        "cover": {
+        }
+    }
+    if image_url:
+        page_payload["cover"] = {
             "type": "external",
             "external": {
                 "url": image_url
             }
-        } if image_url else {}
-    })
+        }
+
+    new_page = notion.pages.create(**page_payload)
     return new_page
 
 
@@ -112,7 +116,7 @@ def create_database(parent_id, title, icon, schema, is_inline=False, cover_image
             }
         ],
         "properties": properties,
-        "is_inline": is_inline,
+        "is_inline": is_inline
     }
 
     if image_url:
