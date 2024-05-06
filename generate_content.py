@@ -12,10 +12,10 @@ def main():
     notion_page_id = os.environ["NOTION_PAGE_ID"]
 
     content = generate_blueprint(args.description)
-    response = content["response"]
+    # response = content["response"]
     blueprint = content["blueprint"]
 
-    print(response)
+    # print(response)
 
     process_blueprint(notion_page_id, blueprint)
 

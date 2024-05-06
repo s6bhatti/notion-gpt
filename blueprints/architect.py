@@ -91,6 +91,7 @@ def process_blueprint(parent_id, block_json):
 def generate_blueprint(description):
     response = client.chat.completions.create(
         model=MODEL_NAME,
+        response_format={"type": "json_object"},
         messages=[
             {
                 "role": "system",
@@ -117,11 +118,60 @@ def generate_blueprint(description):
                 "content": description
             }
         ],
-        temperature=0.6,
+        temperature=0.7,
         max_tokens=4096,
-        top_p=0.7,
+        top_p=0.1,
         frequency_penalty=0,
-        presence_penalty=0
+        presence_penalty=0,
+        stream=True
     )
-    content = json.loads(response.choices[0].message.content)
+
+    in_response = False
+    accumulated_json = ""
+    response_buffer = ""
+    partial_newline = False
+
+    for chunk in response:
+        text = chunk.choices[0].delta.content
+
+        if text is None:
+            text = ""
+
+        accumulated_json += text
+
+        if partial_newline:
+            if text.startswith("n"):
+                response_buffer += "\n"
+                text = text[1:]
+            partial_newline = False
+
+        if text.endswith("\\"):
+            partial_newline = True
+            text = text[:-1]
+
+        text = text.replace("\\n", "\n")
+
+        if not in_response:
+            response_start_index = accumulated_json[-20 - len(text):].find('"response":"')
+            if response_start_index != -1:
+                in_response = True
+                start_index = len(accumulated_json) - (20 + len(text)) + response_start_index + len('"response":"')
+            else:
+                start_index = 0
+        else:
+            start_index = 0
+
+        if in_response:
+            response_buffer += text[start_index:]
+
+            end_index = response_buffer.find('",')
+            if end_index != -1:
+                print(response_buffer[:end_index], end="", flush=True)
+                in_response = False
+                response_buffer = ""
+            else:
+                print(response_buffer[start_index:], end="", flush=True)
+                response_buffer = ""
+
+    content = json.loads(accumulated_json)
     return content
