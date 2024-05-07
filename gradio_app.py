@@ -6,10 +6,10 @@ from blueprints.architect import generate_blueprint, process_blueprint
 NOTION_PAGE_ID = os.environ["NOTION_PAGE_ID"]
 
 
-def gradio_blueprint_interface(description):
+def gradio_blueprint_interface(description, force_json, temperature, top_p):
     try:
         cumulative_content = ""
-        for update in generate_blueprint(description):
+        for update in generate_blueprint(description, force_json, temperature, top_p):
             if isinstance(update, dict):
                 yield "Blueprint generation complete. Processing blueprint..."
                 process_blueprint(NOTION_PAGE_ID, update.get('blueprint', {}))
@@ -20,13 +20,18 @@ def gradio_blueprint_interface(description):
     except Exception as e:
         yield f"Error encountered: {str(e)}. Restarting..."
         time.sleep(5)
-        yield from gradio_blueprint_interface(description)
+        yield from gradio_blueprint_interface(description, force_json, temperature, top_p)
 
 
 def main():
     iface = gr.Interface(
         fn=gradio_blueprint_interface,
-        inputs=[gr.Textbox(label="Describe your Notion page")],
+        inputs=[
+            gr.Textbox(label="Describe your Notion page"),
+            gr.Checkbox(label="Force JSON", value=True),
+            gr.Slider(label="Temperature", minimum=0.1, maximum=1.0, step=0.1, value=0.7),
+            gr.Slider(label="Top P", minimum=0.1, maximum=1.0, step=0.1, value=0.2),
+        ],
         outputs=[gr.Text(label="Process Output")],
         title="NotionGPT",
         description="Enter a description to generate and process a custom Notion page layout."

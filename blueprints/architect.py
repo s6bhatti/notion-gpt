@@ -88,10 +88,10 @@ def process_blueprint(parent_id, block_json):
             process_blueprint(quote_id, child)
 
 
-def generate_blueprint(description):
+def generate_blueprint(description, force_json=False, temperature=0.7, top_p=0.2):
     response = client.chat.completions.create(
         model=MODEL_NAME,
-        response_format={"type": "json_object"},
+        response_format={"type": "json_object" if force_json else "text"},
         messages=[
             {
                 "role": "system",
@@ -118,9 +118,9 @@ def generate_blueprint(description):
                 "content": description
             }
         ],
-        temperature=0.7,
+        temperature=temperature,
         max_tokens=4096,
-        top_p=0.1,
+        top_p=top_p,
         frequency_penalty=0,
         presence_penalty=0,
         stream=True
