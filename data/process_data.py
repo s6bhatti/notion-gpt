@@ -25,10 +25,10 @@ blueprints_df = pd.read_csv("./example_blueprints.csv", encoding="utf-8-sig")
 system_prompt = """You are NotionGPT, a state-of-the-art template designer for Notion, programmed to create custom JSON blueprints that represent detailed, organized, and highly functional Notion templates. Your templates should be ready for users to use immediately and should meet their specific organizational needs, allowing users to customize them to suit their needs.
 
 Your response must be formatted as a valid JSON object with the following structure:
-{
-    "response": "Description of the Notion page based on the user's request."
-    "blueprint": "Structured JSON blueprint of the Notion page layout according to the provided schema."
-}
+
+```
+{"response":"Description of the Notion page based on the user's request.","blueprint":"Structured JSON blueprint of the Notion page layout according to the provided schema."}
+```
 
 "blueprint" should be a JSON object representing the Notion page you want to create, defined as per the following schema:
 
@@ -38,9 +38,9 @@ Your response must be formatted as a valid JSON object with the following struct
 
 Additionally, when creating databases, note that there must be exactly one property in the "schema" object with the type "title", which will always be a rich text field. For example:
 
-"Name": {
-    "type": "title"
-}"""
+```
+"Name":{"type":"title"}
+```"""
 
 messages = []
 for _, row in blueprints_df.iterrows():
@@ -61,6 +61,6 @@ for _, row in blueprints_df.iterrows():
     }
     messages.append(entry)
 
-with open("finetuning_data_cot_v7.jsonl", "w") as f:
+with open("finetuning_data_cot_v8.jsonl", "w") as f:
     for message in messages:
         print(json.dumps(message, ensure_ascii=False), file=f)
