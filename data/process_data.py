@@ -61,6 +61,6 @@ for _, row in blueprints_df.iterrows():
     }
     messages.append(entry)
 
-with open("finetuning_data_cot_v8.jsonl", "w") as f:
+with open("finetuning_data_cot_v7.jsonl", "w") as f:
     for message in messages:
         print(json.dumps(message, ensure_ascii=False), file=f)
