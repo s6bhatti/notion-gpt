@@ -27,7 +27,7 @@ def main():
     iface = gr.Interface(
         fn=gradio_blueprint_interface,
         inputs=[
-            gr.Textbox(label="Describe your Notion page", value="Generate me a comprehensive Notion page to plan a 2-week vacation to Tokyo and Kyoto. It should have a section including a detailed day-by-day itinerary, a database of accommodations, a database to keep track of my budget for the trip, and a list of to-dos."),
+            gr.Textbox(label="Describe your Notion page", value="Generate me a detailed and comprehensive Notion page to plan a 2-week vacation to Tokyo and Kyoto."),
             gr.Checkbox(label="Force JSON", value=True),
             gr.Slider(label="Temperature", minimum=0.1, maximum=1.0, step=0.1, value=0.7),
             gr.Slider(label="Top P", minimum=0.1, maximum=1.0, step=0.1, value=0.2),
