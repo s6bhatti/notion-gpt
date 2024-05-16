@@ -342,7 +342,7 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
 
     if error and failed_response:
         response = client.chat.completions.create(
-            model="ft:gpt-3.5-turbo-0125:personal:notion-gpt-v4:9PNgtfIV",
+            model=MODEL_NAME,
             response_format={"type": "json_object" if force_json else "text"},
             messages=[
                 {
@@ -371,7 +371,7 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
         )
     else:
         response = client.chat.completions.create(
-            model="ft:gpt-3.5-turbo-0125:personal:notion-gpt-v4:9PNgtfIV",
+            model=MODEL_NAME,
             response_format={"type": "json_object" if force_json else "text"},
             messages=[
                 {

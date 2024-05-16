@@ -40,7 +40,7 @@ def main():
         inputs=[
             gr.Textbox(label="Describe your Notion page", value="Generate me a detailed and comprehensive Notion page to plan a 2-week vacation to Tokyo and Kyoto."),
             gr.Checkbox(label="Force JSON", value=False),
-            gr.Slider(label="Temperature", minimum=0.1, maximum=1.0, step=0.1, value=0.8),
+            gr.Slider(label="Temperature", minimum=0.1, maximum=1.0, step=0.1, value=1.0),
             gr.Slider(label="Top P", minimum=0.1, maximum=1.0, step=0.1, value=0.4),
         ],
         outputs=[gr.Text(label="Process Output")],
