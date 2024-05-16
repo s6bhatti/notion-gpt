@@ -48,11 +48,11 @@ pinned: false
 
 ### Finetuning the GPT model
 
-1. Download `data/finetuning_data_cot_v7.jsonl` in the GitHub repository.
+1. Download `data/finetuning_data_cot_v8.jsonl` in the GitHub repository.
 2. Visit the [OpenAI Fine-tuning page](https://platform.openai.com/finetune) and click `+ Create` in the top right corner.
 3. Fill in the form with the following information, and leave the rest as default:
    - `Base Model`: `gpt-3.5-turbo-0125` (or any other model you prefer)
-   - `Training data`: Upload the `finetuning_data_cot_v7.jsonl` file.
+   - `Training data`: Upload the `finetuning_data_cot_v8.jsonl` file.
    - `Suffix`: NotionGPT (or any other name you prefer)
 4. Click `Create` and wait for the model to finish training.
 5. Once the model is trained, copy the model name and save it for later. (It should look something like `ft:gpt-3.5-turbo-0125:personal:notiongpt:<ID>`)

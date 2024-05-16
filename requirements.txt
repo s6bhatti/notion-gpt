@@ -29,6 +29,7 @@ huggingface-hub==0.23.0
 idna==3.7
 importlib_resources==6.4.0
 Jinja2==3.1.4
+json_repair==0.*
 jsonschema==4.22.0
 jsonschema-specifications==2023.12.1
 kiwisolver==1.4.5

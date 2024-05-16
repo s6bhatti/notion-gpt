@@ -1,32 +1,3 @@
-import pandas as pd
-import json
-
-
-def decode_unicode_escapes(blueprint):
-    decoded = (blueprint.encode("latin_1").decode("unicode_escape")
-               .encode("utf-16", "surrogatepass")
-               .decode("utf-16")
-               .replace("\u00A0", " "))
-    return decoded
-
-
-def escape_newlines(obj):
-    if isinstance(obj, str):
-        return obj.replace("\n", "\\n").replace('"', '\\"')
-    elif isinstance(obj, dict):
-        return {key: escape_newlines(value) for key, value in obj.items()}
-    elif isinstance(obj, list):
-        return [escape_newlines(item) for item in obj]
-    return obj
-
-
-blueprints_df = pd.read_csv("./example_blueprints.csv", encoding="utf-8-sig")
-
-system_prompt = """You are NotionGPT, a state-of-the-art template designer for Notion, programmed to create custom JSON blueprints that represent detailed, organized, and highly functional Notion templates. Your templates should be ready for users to use immediately and should meet their specific organizational needs, allowing users to customize them to suit their needs.
-
-Please respond ONLY with valid json that conforms to the `OpenAIResponse(BaseModel)` class as defined by pydantic: 
-
-```
 from __future__ import annotations
 
 from enum import Enum
@@ -269,29 +240,3 @@ Column.update_forward_refs()
 ColumnList.update_forward_refs()
 Callout.update_forward_refs()
 Quote.update_forward_refs()
-```
-
-Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic."""
-
-messages = []
-for _, row in blueprints_df.iterrows():
-    response = {
-        "response": row["Response"],
-        "blueprint": json.loads(row["Blueprint"])
-    }
-    response = escape_newlines(response)
-    response = json.dumps(response, separators=(",", ":"))
-    response = decode_unicode_escapes(response)
-
-    entry = {
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": row["Prompt"]},
-            {"role": "assistant", "content": response}
-        ]
-    }
-    messages.append(entry)
-
-with open("finetuning_data_cot_v8.jsonl", "w") as f:
-    for message in messages:
-        print(json.dumps(message, ensure_ascii=False), file=f)
