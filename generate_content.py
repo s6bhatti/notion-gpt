@@ -1,6 +1,5 @@
 import argparse
 import os
-from functools import partial
 
 from blueprints.architect import process_blueprint, generate_blueprint
 

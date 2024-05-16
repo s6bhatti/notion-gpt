@@ -1,9 +1,11 @@
-import gradio as gr
-import os
 import json
+import os
 import time
-from blueprints.architect import generate_blueprint, process_blueprint
+
+import gradio as gr
 from pydantic import ValidationError
+
+from blueprints.architect import generate_blueprint, process_blueprint
 from blueprints.schema import OpenAIResponse
 
 NOTION_PAGE_ID = os.environ["NOTION_PAGE_ID"]
