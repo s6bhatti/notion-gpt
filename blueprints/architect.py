@@ -332,7 +332,7 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
     	@model_validator(mode='after')
     	def validate_children(cls, values):
         	if len(values.blueprint.children) <= 1:
-            	raise ValueError("The root Page (blueprint) must have more than one child.")
+            	raise ValueError("The root Page (blueprint) must have more than one child. Note: DO NOT JUST GENERATE A SINGULAR CALLOUT BOX IN A PAGE AS YOUR BLUEPRINT. THIS IS VERY IMPORTANT.")
         	return values
 
 
