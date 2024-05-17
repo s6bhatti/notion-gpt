@@ -233,6 +233,12 @@ class OpenAIResponse(BaseModel):
     response: str
     blueprint: Page
 
+    @model_validator(mode='after')
+    def validate_children(cls, values):
+        if len(values.blueprint.children) <= 1:
+            raise ValueError("The root Page (blueprint) must have more than one child.")
+        return values
+
 
 Page.update_forward_refs()
 Toggle.update_forward_refs()
