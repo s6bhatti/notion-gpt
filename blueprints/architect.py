@@ -88,7 +88,7 @@ def process_blueprint(parent_id, block_json):
             process_blueprint(quote_id, child)
 
 
-def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3, error=None, failed_response=None):
+def generate_blueprint(description, model_name, force_json=False, temperature=0.8, top_p=0.3, error=None, failed_response=None):
     system_prompt = """You are NotionGPT, a state-of-the-art template designer for Notion, programmed to create custom JSON blueprints that represent detailed, organized, and highly functional Notion templates. Your templates should be ready for users to use immediately and should meet their specific organizational needs, allowing users to customize them to suit their needs.
 
     Please respond ONLY with valid json that conforms to the `OpenAIResponse(BaseModel)` class as defined by pydantic in the Python code below:
@@ -348,7 +348,7 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
 
     if error and failed_response:
         response = client.chat.completions.create(
-            model=MODEL_NAME,
+            model=model_name,
             response_format={"type": "json_object" if force_json else "text"},
             messages=[
                 {
@@ -368,16 +368,16 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
                     "content": f"While processing your response with Pydantic, I encountered the following error: {error}. Please edit your previous response to correct the error following the exact same format."
                 }
             ],
-            temperature=temperature - 0.2 if temperature > 0.2 else temperature,
+            temperature=temperature,
             max_tokens=4096,
-            top_p=top_p - 0.2 if top_p > 0.2 else top_p,
+            top_p=top_p,
             frequency_penalty=0,
             presence_penalty=0,
             stream=True
         )
     else:
         response = client.chat.completions.create(
-            model=MODEL_NAME,
+            model=model_name,
             response_format={"type": "json_object" if force_json else "text"},
             messages=[
                 {
