@@ -3755,10 +3755,10 @@ Now I’ll go ahead and create this job board for Notion, in Notion.","{
 1. Introduction: Start strong with an inspirational phrase about innovation in digital transformation, followed by key bullet points to encapsulate Acme’s mission.
 2. Company Overview: This section will highlight Acme's role as a leader in digital transformation with a dual-column callout for emphasis.
 3. Problem & Opportunity: A clear layout of the problem, current market gap, and Acme's position to capitalize on this opportunity.
-5. Traction & GTM: Key metrics and successes so far that showcase Acme's growth and the effectiveness of your business model.
-6. About Us: Introduce your team with a database of team members to show the expertise behind Acme.
-7. Client List: Highlight some of your major clients and what they’re doing to reinforce credibility and trust.
-8. Call to Action: Ending with a strong call to action to encourage potential investors to join in on this venture.
+4. Traction & GTM: Key metrics and successes so far that showcase Acme's growth and the effectiveness of your business model.
+5. About Us: Introduce your team with a database of team members to show the expertise behind Acme.
+6. Client List: Highlight some of your major clients and what they’re doing to reinforce credibility and trust.
+7. Call to Action: Ending with a strong call to action to encourage potential investors to join in on this venture.
 
 This organization will ensure that your potential investors have a clear, coherent view of what makes Acme exceptional and why they should invest in your vision. Now that I’ve shared the structure, I’ll turn it into a reality using Notion so that you can start using this pitch deck as soon as possible.","{
     ""type"": ""page"",
@@ -5410,6 +5410,568 @@ This system will not only present your startup effectively but also enhance the 
                     ]
                 }
             ]
+        }
+    ]
+}",Work
+"I'm a leader at an organization and want a Notion presentation to go along with our company all-hands, make it nice!","Certainly! Let me walk you through what your Notion page, titled “Presentation”, will contain to help you deliver an impactful company all-hands. Here's the structure I'll create:
+
+1. Table of Contents: Easily navigate through the page contents using the table of contents right at the beginning.
+2. Opening Section: Highlight important company updates such as a new office opening and welcoming new team members.
+3. People & Company Insights: Deep dive into crucial updates, like clarifying the usage of OKRs and discussing recent hires.
+4. Product & Engineering: Discuss the progress tracked through OKRs, new landing page introductions, and more.
+5. Business & Customer Engagement: Offer a brief on business progress, like moving forward with a non-profit program.
+6. Interactive Q&A Session: A section inviting the audience to ask their questions, with space to add notes on the day’s engagement.
+7. Recording Link: Provide the link to the recorded meeting to facilitate those who couldn’t attend.
+8. Additional Documents: Attach relevant pages like further details on a non-profit launch that you discussed during the presentation.
+
+This layout ensures a structured, engaging, and informative all-hands meeting that keeps employees informed about the company’s progress and future directions. Now, I'll go ahead and create this presentation for you using Notion!","{
+    ""type"": ""page"",
+    ""title"": ""Presentation"",
+    ""icon"": ""\ud83d\ude4c"",
+    ""children"": [
+        {
+            ""type"": ""callout"",
+            ""icon"": ""\ud83d\udc49"",
+            ""color"": ""gray_background"",
+            ""content"": [
+                {
+                    ""text"": ""Notion Tip:  "",
+                    ""style"": [
+                        ""bold""
+                    ]
+                },
+                {
+                    ""text"": ""Use this template to present new ideas and status updates with your team. The presentation schedule automatically indexes any topic you add. Use the toggles to show and hide content as your presentation progresses."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        },
+        {
+            ""type"": ""column_list"",
+            ""columns"": [
+                {
+                    ""type"": ""column"",
+                    ""children"": [
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Table of contents"",
+                                    ""style"": [
+                                        ""bold""
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            ""type"": ""table_of_contents""
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""column"",
+                    ""children"": [
+                        {
+                            ""type"": ""callout"",
+                            ""icon"": ""\ud83d\udccc"",
+                            ""color"": ""gray_background"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Reminders"",
+                                    ""style"": [
+                                        ""bold""
+                                    ]
+                                }
+                            ],
+                            ""children"": [
+                                {
+                                    ""type"": ""bulleted_list"",
+                                    ""items"": [
+                                        ""If possible, please turn on your video camera"",
+                                        ""We\u2019ll do live Q&A at the end"",
+                                        ""We're keeping the programs light today, so there's more time for FAQ"",
+                                        ""Please add your questions in the Zoom chat during the all-hands""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Opening""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\uddfd The New York office!"",
+            ""children"": [
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""Officially opened on Monday, August 23 \ud83c\udf89"",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\udc4b Welcome to our new hires"",
+            ""children"": [
+                {
+                    ""type"": ""toggle"",
+                    ""title"": ""November 7, 2022 Group"",
+                    ""children"": [
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Add more details here\u2026"",
+                                    ""style"": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""toggle"",
+                    ""title"": ""November 21, 2022 Group"",
+                    ""children"": [
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Add more details here\u2026"",
+                                    ""style"": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""People & company""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\udea6 Context on OKRs traffic light"",
+            ""children"": [
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""O \u2192 Objective\nKR \u2192 Key Results"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""We use OKRs to track progress and quantify our goals."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66 People OKR update"",
+            ""children"": [
+                {
+                    ""type"": ""bulleted_list"",
+                    ""items"": [
+                        ""OKR Update"",
+                        ""Engagement and new hire numbers""
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Product""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\u2699\ufe0f Product OKR update"",
+            ""children"": [
+                {
+                    ""type"": ""bulleted_list"",
+                    ""items"": [
+                        ""OKR Update"",
+                        ""Query time numbers""
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\u2728 New landing page"",
+            ""children"": [
+                {
+                    ""type"": ""bulleted_list"",
+                    ""items"": [
+                        ""Desktop landing page"",
+                        ""Mobile landing page""
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Business & customer""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\udcbc Business OKR update"",
+            ""children"": [
+                {
+                    ""type"": ""bulleted_list"",
+                    ""items"": [
+                        ""OKR update"",
+                        ""Idea workflow""
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83c\udf31 Non-profit program"",
+            ""children"": [
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""We've successfully launched our non-profit program! Check out the documents section for more information."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Q&A""
+        },
+        {
+            ""type"": ""toggle"",
+            ""title"": ""\ud83d\udcee Q&A Notes"",
+            ""children"": [
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""Open mic (5 mins)"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""How can we contribute to the non-profit program?"",
+                            ""style"": []
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""paragraph"",
+                    ""content"": [
+                        {
+                            ""text"": ""Ping john.doe@acme.com for more details"",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Recording link""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""Add a link to the recording so that folks who couldn't attend the meeting can catch up later!"",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""callout"",
+            ""icon"": ""\ud83d\udc49"",
+            ""color"": ""gray_background"",
+            ""content"": [
+                {
+                    ""text"": ""All hands \u201822 recording \u2192"",
+                    ""style"": [
+                        ""bold""
+                    ]
+                },
+                {
+                    ""text"": "" https://zoom.us/u/123456789"",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""Documents""
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Non-profit launch"",
+            ""icon"": ""\ud83c\udf0e"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}",Work
+I'm the CEO of a physical goods company and want a Notion system to track my products and then plan out the sub-projects and sub-tasks my team has to complete.,"Absolutely! Here's the notional system titled ""Multi-Product Roadmap"" designed to help you wade through managing multiple physical products effectively as the CEO of a goods company. This system will help you in two main ways:
+
+1. Tracking Products: On the page, you'll find a database where you can list each product, add a description, and even upload product photos.
+
+2. Navigating Projects and Tasks: We’ll add a database where you can create various projects tied to products to improve or launch new features, set priorities and track deadlines. Additionally, we’ll have a task tracker that your team can check off as they’re completed. Each task can be assigned to a different team member and tracked from start to finish, helping you stay on top of your company's progress.
+
+By supercharging your product planning with this organized Notion page, you’ll be able to manage and track the status of each product and the progress of key initiatives and tasks within your organization. Now, let’s go ahead and set it up in Notion to get you started!","{
+    ""type"": ""page"",
+    ""title"": ""Multi-Product Roadmap"",
+    ""icon"": ""\ud83d\uddfa\ufe0f"",
+    ""children"": [
+        {
+            ""type"": ""callout"",
+            ""icon"": ""\ud83d\udc49"",
+            ""color"": ""green_background"",
+            ""content"": [
+                {
+                    ""text"": ""This Multi-Product Roadmap provides a structured approach to navigate products, their associated projects, and underlying tasks."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Products""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""The solutions that your company offers to address the needs of your customers."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Products"",
+            ""icon"": ""\u2b50"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Description"": {
+                    ""type"": ""rich_text""
+                },
+                ""Photo"": {
+                    ""type"": ""files""
+                }
+            }
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Projects""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""Specific initiatives or endeavors undertaken within a product to enhance its features, functionality, or reach."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Projects"",
+            ""icon"": ""\ud83d\udee0\ufe0f"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Project"": {
+                    ""type"": ""title""
+                },
+                ""Product"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Product A"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Product B"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Product C"",
+                            ""color"": ""orange""
+                        }
+                    ]
+                },
+                ""Priority"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""P0"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""P1"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""P2"",
+                            ""color"": ""default""
+                        }
+                    ]
+                },
+                ""Eng hours"": {
+                    ""type"": ""number"",
+                    ""format"": ""number""
+                },
+                ""Status"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Not started"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""In progress"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Done"",
+                            ""color"": ""green""
+                        }
+                    ]
+                },
+                ""Start Date"": {
+                    ""type"": ""date""
+                },
+                ""End Date"": {
+                    ""type"": ""date""
+                }
+            }
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Tasks""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""Individual actions or steps required for your team to complete"",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Tasks"",
+            ""icon"": ""\ud83d\udc77"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Status"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Not started"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""In progress"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Done"",
+                            ""color"": ""green""
+                        }
+                    ]
+                },
+                ""Assigned"": {
+                    ""type"": ""people""
+                }
+            }
         }
     ]
 }",Work
@@ -9048,6 +9610,985 @@ This setup will ensure that your team can work effectively and efficiently, keep
                         },
                         {
                             ""name"": ""Team weekly"",
+                            ""color"": ""green""
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}",School
+"Generate me a Notion tracker. I'm a CS student and want to monitor my personal life, my classwork, and my professional life so I can become a better person. Thanks in advance!","I'll create a comprehensive Notion tracker titled ""Computer Science Student Dashboard"" to help you organize and monitor your personal life, classwork, and professional life effectively. Here's what you can expect in your custom dashboard: 
+
+1. Quick Access: A database where you can store important links and resources for quick reference. 
+2. Habit Tracker: Track your daily habits and tasks with detailed lists for each day, including items like solving LeetCode problems, working on side projects, reading, and more. 
+3. Personal Projects: Individual pages for your personal projects like a social media app, website redesign, personal website, weather tracker, game of life, trading bot, and to-do app. You can add details, images, and toggle options to each project page for better organization. 
+4. Classwork: Databases for courses and homework, allowing you to track course details, assignments, due dates, and completion status. 
+5. Personal Learning and Job Search: Databases for internship search and resources, enabling you to monitor job applications, interview statuses, and organize learning materials with tags like books, videos, podcasts, articles, and talks. 
+
+This structured dashboard will make you a better person, just like you asked, by efficiently organizing your academic workload, personal projects, and professional development. Now, let's go ahead and set up your Notion tracker according to this plan.","{
+    ""type"": ""page"",
+    ""title"": ""Computer Science Student Dashboard"",
+    ""icon"": ""\ud83d\udcbe"",
+    ""children"": [
+        {
+            ""type"": ""callout"",
+            ""icon"": ""\ud83d\udca1"",
+            ""color"": ""gray_background"",
+            ""content"": [
+                {
+                    ""text"": ""Notion Tip: "",
+                    ""style"": [
+                        ""bold""
+                    ]
+                },
+                {
+                    ""text"": ""Studying computer science in college means juggling coursework, side projects, internships, and more. Use this template to help you get organized and stay on top of your school to-do\u2019s."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""\ud83d\udd17\u00a0Quick access""
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Quick access"",
+            ""icon"": ""\ud83d\udd17"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Created"": {
+                    ""type"": ""created_time""
+                },
+                ""URL"": {
+                    ""type"": ""url""
+                }
+            }
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""\u2611\ufe0f\u00a0Habit tracker""
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""September 2, 2022""
+        },
+        {
+            ""type"": ""to_do_list"",
+            ""items"": [
+                {
+                    ""text"": ""\u26a0\ufe0f\u00a0Solve 3 LeetCode problems"",
+                    ""checked"": false
+                },
+                {
+                    ""text"": ""\ud83d\udcbb\u00a0Work on my side project"",
+                    ""checked"": false
+                },
+                {
+                    ""text"": ""\ud83d\udc5f\u00a0Running"",
+                    ""checked"": false
+                },
+                {
+                    ""text"": ""\ud83d\udcd5\u00a0Read"",
+                    ""checked"": false
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""September 1, 2022""
+        },
+        {
+            ""type"": ""to_do_list"",
+            ""items"": [
+                {
+                    ""text"": ""\u26a0\ufe0f\u00a0Solve 3 LeetCode problems"",
+                    ""checked"": true
+                },
+                {
+                    ""text"": ""\ud83d\udcbb\u00a0Work on my side project"",
+                    ""checked"": true
+                },
+                {
+                    ""text"": ""\ud83d\udc5f\u00a0Running"",
+                    ""checked"": true
+                },
+                {
+                    ""text"": ""\ud83d\udcd5\u00a0Read"",
+                    ""checked"": true
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""\ud83c\udfd7\ufe0f\u00a0Personal projects""
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Social media app"",
+            ""icon"": ""\ud83d\udcf1"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Website redesign"",
+            ""icon"": ""\ud83d\udcbb"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Personal website"",
+            ""icon"": ""\ud83d\udc4d"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Weather tracker"",
+            ""icon"": ""\ud83c\udfd6\ufe0f"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Game of life"",
+            ""icon"": ""\ud83d\udc7e"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Trading bot"",
+            ""icon"": ""\ud83d\udcc8"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""To-do app"",
+            ""icon"": ""\u2611\ufe0f"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""\ud83d\udcda Classwork""
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Courses"",
+            ""icon"": ""\ud83d\udcd1"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Code"": {
+                    ""type"": ""rich_text""
+                },
+                ""Course homepage"": {
+                    ""type"": ""url""
+                },
+                ""Credit"": {
+                    ""type"": ""number"",
+                    ""format"": ""number""
+                }
+            }
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Homework"",
+            ""icon"": ""\ud83d\udcdd"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Course"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""MATH19"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""CS106A"",
+                            ""color"": ""default""
+                        },
+                        {
+                            ""name"": ""CS106B"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""MATH20"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""CS107"",
+                            ""color"": ""blue""
+                        }
+                    ]
+                },
+                ""Due date"": {
+                    ""type"": ""date""
+                },
+                ""Complete"": {
+                    ""type"": ""checkbox""
+                }
+            }
+        },
+        {
+            ""type"": ""heading_1"",
+            ""text"": ""\ud83e\udd13 Personal Learning and Job Search""
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Internship search"",
+            ""icon"": ""\ud83d\udcbc"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Role"": {
+                    ""type"": ""title""
+                },
+                ""Company"": {
+                    ""type"": ""rich_text""
+                },
+                ""Status"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""To apply"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""Applied"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Interviewing"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Rejected"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Accepted"",
+                            ""color"": ""green""
+                        }
+                    ]
+                },
+                ""Applied"": {
+                    ""type"": ""date""
+                },
+                ""Resume"": {
+                    ""type"": ""files""
+                }
+            }
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Resources"",
+            ""icon"": ""\ud83d\udcda"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Created"": {
+                    ""type"": ""created_time""
+                },
+                ""Tags"": {
+                    ""type"": ""multi_select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Book"",
+                            ""color"": ""default""
+                        },
+                        {
+                            ""name"": ""Video"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""Podcast"",
+                            ""color"": ""green""
+                        },
+                        {
+                            ""name"": ""Article"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""Talks"",
+                            ""color"": ""pink""
+                        }
+                    ]
+                },
+                ""URL"": {
+                    ""type"": ""url""
+                }
+            }
+        }
+    ]
+}",School
+"I'm a 6th grade teacher, generate me a place where I can manage my curriculum, a shared class home, and any other resources. Explain in detail how you'll structure my page please!","I will set up a Notion page for you called “Teacher Home”, where you can efficiently manage your curriculum, share class resources, and store information for your teaching. Here's a breakdown of what your Notion page will include:
+
+1. Curriculum Section
+    - Lessons Database: Track lesson progress, status, type, and dates.
+    - Units Database: Manage units with final assessments and unit durations.
+    - Standards Database: Record standards aligned with your curriculum.
+
+2. Other Resources Section:
+    - 2022 Class Directory: Keep essential student information like allergies, birthdays, guardian contact information, and home languages.
+    - Sub Notes Page: Add notes for substitute teachers to ensure seamless teaching continuity.
+
+3. Sharing Space Section:
+    - 6th Grade Science Home Page: A shared class page with:
+        - Reminders: Task list for students.
+        - Resources:
+            - Meet the Teacher Page: Introduction to the teacher.
+            - Syllabus Page: Detailed syllabus.
+            - Science on YouTube Page: Resources related to science on YouTube.
+
+This setup will provide you with an organized system to manage your curriculum content, interact with students, and streamline your teaching process effectively. Now, I'll go ahead and create this detailed Teacher Home Notion page for you!","{
+    ""type"": ""page"",
+    ""title"": ""Teacher home"",
+    ""icon"": ""\ud83c\udf4e"",
+    ""children"": [
+        {
+            ""type"": ""callout"",
+            ""icon"": ""\ud83d\udca1"",
+            ""color"": ""gray_background"",
+            ""content"": [
+                {
+                    ""text"": ""Notion Tip: "",
+                    ""style"": [
+                        ""bold""
+                    ]
+                },
+                {
+                    ""text"": ""Use this dynamic template to consolidate all the lessons, notes, and student resources that may be useful for you and your students."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Curriculum""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""Use the space below to keep track of your curriculum content."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Lessons"",
+            ""icon"": ""\ud83c\udf31"",
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Date"": {
+                    ""type"": ""date""
+                },
+                ""Status"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Not started"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""In progress"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Done"",
+                            ""color"": ""green""
+                        }
+                    ]
+                },
+                ""Type"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Stations"",
+                            ""color"": ""pink""
+                        },
+                        {
+                            ""name"": ""Lab"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Worksheet"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""Exam"",
+                            ""color"": ""gray""
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Units"",
+            ""icon"": ""\ud83e\udeb4"",
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Final assessment"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Lab"",
+                            ""color"": ""gray""
+                        },
+                        {
+                            ""name"": ""Lab report"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""Exam"",
+                            ""color"": ""blue""
+                        }
+                    ]
+                },
+                ""Length of unit in days"": {
+                    ""type"": ""number"",
+                    ""format"": ""number""
+                }
+            }
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Standards"",
+            ""icon"": ""\ud83d\udccf"",
+            ""schema"": {
+                ""Name"": {
+                    ""type"": ""title""
+                },
+                ""Standard"": {
+                    ""type"": ""rich_text""
+                }
+            }
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Other resources""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""List out resources that may be helpful for a substitute teacher. "",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""2022 Class directory"",
+            ""icon"": ""\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66"",
+            ""schema"": {
+                ""Preferred Name"": {
+                    ""type"": ""title""
+                },
+                ""Allergies"": {
+                    ""type"": ""rich_text""
+                },
+                ""Birthday"": {
+                    ""type"": ""date""
+                },
+                ""Guardian email"": {
+                    ""type"": ""email""
+                },
+                ""Guardian phone"": {
+                    ""type"": ""phone_number""
+                },
+                ""Home language(s)"": {
+                    ""type"": ""multi_select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Italian"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""Armenian"",
+                            ""color"": ""default""
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""Sub notes"",
+            ""icon"": ""\ud83d\udeec"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udca1"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Notion Tip:"",
+                            ""style"": [
+                                ""bold""
+                            ]
+                        },
+                        {
+                            ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                            ""style"": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""heading_2"",
+            ""text"": ""Sharing space""
+        },
+        {
+            ""type"": ""divider""
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": [
+                {
+                    ""text"": ""Add pages that you\u2019ll share with your students here."",
+                    ""style"": []
+                }
+            ]
+        },
+        {
+            ""type"": ""page"",
+            ""title"": ""6th grade science home"",
+            ""icon"": ""\ud83c\udf0b"",
+            ""children"": [
+                {
+                    ""type"": ""callout"",
+                    ""icon"": ""\ud83d\udc4b"",
+                    ""color"": ""gray_background"",
+                    ""content"": [
+                        {
+                            ""text"": ""Welcome to 6th grade! I\u2019m so excited that you\u2019re in my class this year. This is our home for all resources and announcements. "",
+                            ""style"": []
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""heading_3"",
+                    ""text"": ""Reminders""
+                },
+                {
+                    ""type"": ""to_do_list"",
+                    ""items"": [
+                        {
+                            ""text"": ""Submit your welcome survey by September 1, 2022!"",
+                            ""checked"": false
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""heading_3"",
+                    ""text"": ""Resources""
+                },
+                {
+                    ""type"": ""page"",
+                    ""title"": ""Meet the teacher"",
+                    ""icon"": ""\ud83d\udc4b"",
+                    ""children"": [
+                        {
+                            ""type"": ""callout"",
+                            ""icon"": ""\ud83d\udca1"",
+                            ""color"": ""gray_background"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Notion Tip:"",
+                                    ""style"": [
+                                        ""bold""
+                                    ]
+                                },
+                                {
+                                    ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                                    ""style"": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""page"",
+                    ""title"": ""Syllabus"",
+                    ""icon"": ""\ud83d\udccc"",
+                    ""children"": [
+                        {
+                            ""type"": ""callout"",
+                            ""icon"": ""\ud83d\udca1"",
+                            ""color"": ""gray_background"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Notion Tip:"",
+                                    ""style"": [
+                                        ""bold""
+                                    ]
+                                },
+                                {
+                                    ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                                    ""style"": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""page"",
+                    ""title"": ""Science on YouTube"",
+                    ""icon"": ""\ud83e\uddea"",
+                    ""children"": [
+                        {
+                            ""type"": ""callout"",
+                            ""icon"": ""\ud83d\udca1"",
+                            ""color"": ""gray_background"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Notion Tip:"",
+                                    ""style"": [
+                                        ""bold""
+                                    ]
+                                },
+                                {
+                                    ""text"": "" Add more details right in this page, including toggles, images, and more. Break up the page by using our different header options so that it\u2019s easier to read."",
+                                    ""style"": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        }
+    ]
+}",School
+I'm currently applying to auditions and want a Notion page to store all the relevant documents and a system to track my applications. Can you help me?,"Absolutely! Let's create an organized Notion page titled ""Audition Tracker"" to help you manage your audition applications effectively. Here's a breakdown of what the page will include:
+
+1. Resume & Portfolio: A section where you can upload your resume and link your portfolio for quick access and reference.
+2. Headshot: An area to add a professional photo of yourself to accompany your applications.
+3. Audition Tracker Database: A database to track all the audtions you're applying to and all the relevant details.
+
+This setup will help you stay organized, track your progress, and ensure you are well-prepared for each audition. Let's proceed with creating this comprehensive Audition Tracker in Notion for you!","{
+    ""type"": ""page"",
+    ""title"": ""Audition tracker"",
+    ""icon"": ""\ud83c\udfad"",
+    ""children"": [
+        {
+            ""type"": ""column_list"",
+            ""columns"": [
+                {
+                    ""type"": ""column"",
+                    ""children"": [
+                        {
+                            ""type"": ""heading_2"",
+                            ""text"": ""Resume""
+                        },
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Upload your resume by typing /file"",
+                                    ""style"": [
+                                        ""code""
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            ""type"": ""heading_2"",
+                            ""text"": ""Portfolio link""
+                        },
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Link your portfolio by typing /bookmark"",
+                                    ""style"": [
+                                        ""code""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    ""type"": ""column"",
+                    ""children"": [
+                        {
+                            ""type"": ""heading_2"",
+                            ""text"": ""Headshot""
+                        },
+                        {
+                            ""type"": ""paragraph"",
+                            ""content"": [
+                                {
+                                    ""text"": ""Add a professional photo of yourself by typing /image"",
+                                    ""style"": [
+                                        ""code""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ""type"": ""paragraph"",
+            ""content"": []
+        },
+        {
+            ""type"": ""database"",
+            ""title"": ""Audition tracker"",
+            ""icon"": ""\ud83c\udf7f"",
+            ""is_inline"": true,
+            ""schema"": {
+                ""Play/Musical"": {
+                    ""type"": ""title""
+                },
+                ""Role"": {
+                    ""type"": ""rich_text""
+                },
+                ""Status"": {
+                    ""type"": ""select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Applied"",
+                            ""color"": ""default""
+                        },
+                        {
+                            ""name"": ""Auditioning"",
+                            ""color"": ""brown""
+                        },
+                        {
+                            ""name"": ""Call back"",
+                            ""color"": ""orange""
+                        },
+                        {
+                            ""name"": ""First round"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Last round"",
+                            ""color"": ""green""
+                        },
+                        {
+                            ""name"": ""Accepted"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Rejected"",
+                            ""color"": ""red""
+                        }
+                    ]
+                },
+                ""Audition date"": {
+                    ""type"": ""date""
+                },
+                ""Next deadline"": {
+                    ""type"": ""date""
+                },
+                ""Location"": {
+                    ""type"": ""rich_text""
+                },
+                ""Skills required"": {
+                    ""type"": ""multi_select"",
+                    ""options"": [
+                        {
+                            ""name"": ""Singing"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Classically-trained singing"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Operatic singing"",
+                            ""color"": ""red""
+                        },
+                        {
+                            ""name"": ""Dancing"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Ballet dancing"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Jazz dancing"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Tap dancing"",
+                            ""color"": ""yellow""
+                        },
+                        {
+                            ""name"": ""Acting"",
+                            ""color"": ""brown""
+                        },
+                        {
+                            ""name"": ""Improvisation"",
+                            ""color"": ""blue""
+                        },
+                        {
+                            ""name"": ""Comedy"",
+                            ""color"": ""default""
+                        },
+                        {
+                            ""name"": ""Roller skating"",
+                            ""color"": ""purple""
+                        },
+                        {
+                            ""name"": ""Swordfighting"",
                             ""color"": ""green""
                         }
                     ]

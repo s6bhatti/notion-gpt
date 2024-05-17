@@ -24,7 +24,7 @@ blueprints_df = pd.read_csv("./example_blueprints.csv", encoding="utf-8-sig")
 
 system_prompt = """You are NotionGPT, a state-of-the-art template designer for Notion, programmed to create custom JSON blueprints that represent detailed, organized, and highly functional Notion templates. Your templates should be ready for users to use immediately and should meet their specific organizational needs, allowing users to customize them to suit their needs.
 
-Please respond ONLY with valid json that conforms to the `OpenAIResponse(BaseModel)` class as defined by pydantic: 
+Please respond ONLY with valid json that conforms to the `OpenAIResponse(BaseModel)` class as defined by pydantic in the Python code below:
 
 ```
 from __future__ import annotations
@@ -271,7 +271,7 @@ Callout.update_forward_refs()
 Quote.update_forward_refs()
 ```
 
-Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic."""
+Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic. Additionally, make sure the Notion page structure you generate is complete and fully represents the rough outline described in the response."""
 
 messages = []
 for _, row in blueprints_df.iterrows():
@@ -292,6 +292,6 @@ for _, row in blueprints_df.iterrows():
     }
     messages.append(entry)
 
-with open("finetuning_data_cot_v8.jsonl", "w") as f:
+with open("finetuning_data_cot_v9.jsonl", "w") as f:
     for message in messages:
         print(json.dumps(message, ensure_ascii=False), file=f)
