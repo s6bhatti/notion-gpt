@@ -271,7 +271,7 @@ Callout.update_forward_refs()
 Quote.update_forward_refs()
 ```
 
-Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic. Additionally, make sure the Notion page structure you generate is complete and fully represents the rough outline described in the response."""
+Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic. Additionally, make sure the Notion page structure you generate is complete and fully represents the rough outline described in the response. DO NOT JUST GENERATE A SINGULAR CALLOUT BOX IN A PAGE AS YORU BLUEPRINT. THIS IS VERY IMPORTANT."""
 
 messages = []
 for _, row in blueprints_df.iterrows():
@@ -292,6 +292,6 @@ for _, row in blueprints_df.iterrows():
     }
     messages.append(entry)
 
-with open("finetuning_data_cot_v9.jsonl", "w") as f:
+with open("finetuning_data_cot_v10.jsonl", "w") as f:
     for message in messages:
         print(json.dumps(message, ensure_ascii=False), file=f)

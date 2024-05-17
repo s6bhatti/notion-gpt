@@ -338,7 +338,7 @@ def generate_blueprint(description, force_json=False, temperature=0.8, top_p=0.3
     Quote.update_forward_refs()
     ```
 
-    Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic. Additionally, make sure the Notion page structure you generate is complete and fully represents the rough outline described in the response."""
+    Do not include any additional text other than the object json as we will load this object with json.loads() and pydantic. Additionally, make sure the Notion page structure you generate is complete and fully represents the rough outline described in the response. DO NOT JUST GENERATE A SINGULAR CALLOUT BOX IN A PAGE AS YORU BLUEPRINT. THIS IS VERY IMPORTANT."""
     if error and failed_response:
         response = client.chat.completions.create(
             model=MODEL_NAME,
